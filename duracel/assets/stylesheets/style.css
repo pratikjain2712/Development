@@ -1,0 +1,795 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of 
+* content. Table of content is use display the overall tree structure of your
+* Layout. 
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and 
+* example to let you know)
+
+1. CSS Reset Code
+  1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+  1.2. Clear Fix
+  1.3. Font class declaration
+2. Body
+3. Header / .header
+  2.1. Navigation / .navbar
+4. Content / .content
+  4.1. Left column / .leftcolumn
+  4.2. Right column / .rightcolumn
+  4.3. Sidebar / .sidebar
+    4.3.1. RSS / .rss
+    4.3.2. Search / .search
+    4.3.3. Boxes / .box
+    4.3.4. Sideblog / .sideblog
+    4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow. 
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following color code and add your own as this is just and 
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following typography and add your own as this is just and 
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+/* ==========================================================================
+ 1. CSS Reset Code
+ ========================================================================== */
+/* 1.1. Eric Meyers Reset
+ http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ ========================================================================== */
+/* line 65, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 81, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+/* line 87, ../sass/_reset.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+/* line 91, ../sass/_reset.scss */
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+/* line 94, ../sass/_reset.scss */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+/* line 101, ../sass/_reset.scss */
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* line 107, ../sass/_reset.scss */
+em {
+  font-style: italic;
+}
+
+/* line 109, ../sass/_reset.scss */
+img {
+  border: 0;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+}
+
+/* line 116, ../sass/_reset.scss */
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+/* line 124, ../sass/_reset.scss */
+sup {
+  top: -.7em;
+}
+
+/* line 126, ../sass/_reset.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+========================================================================== */
+/* line 131, ../sass/_reset.scss */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+/* line 137, ../sass/_reset.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 139, ../sass/_reset.scss */
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start 
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+/* line 1, ../sass/_header.scss */
+header {
+  background-color: #000;
+}
+/* line 2, ../sass/_header.scss */
+header .wrapper {
+  padding: 13px 170px;
+}
+/* line 8, ../sass/_header.scss */
+header .caption {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 15, ../sass/_header.scss */
+.caption ul {
+  padding: 3px 32px 3px 0;
+  border-right: 1px solid #565656;
+}
+/* line 18, ../sass/_header.scss */
+.caption ul li {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  margin-right: 10px;
+  display: inline-block;
+  list-style-type: none;
+}
+/* line 23, ../sass/_header.scss */
+.caption ul li:last-child {
+  margin-right: 0;
+}
+/* line 25, ../sass/_header.scss */
+.caption ul li:last-child::before {
+  content: "• ";
+  color: #d6f200;
+}
+/* line 29, ../sass/_header.scss */
+.caption ul li:last-child a {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  display: inline-block;
+  text-decoration: none;
+}
+/* line 33, ../sass/_header.scss */
+.caption ul li:last-child a:hover {
+  color: #d6f200;
+}
+
+/* line 42, ../sass/_header.scss */
+.caption p {
+  margin-left: 32px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+/* line 46, ../sass/_header.scss */
+.caption p span {
+  display: block;
+  color: #d6f200;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+}
+
+/* line 52, ../sass/_header.scss */
+h1 {
+  display: inline-block;
+}
+/* line 54, ../sass/_header.scss */
+h1 a {
+  display: inline-block;
+}
+/* line 56, ../sass/_header.scss */
+h1 a img {
+  width: 125px;
+}
+
+/* line 1, ../sass/_customstyles.scss */
+header .wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* line 7, ../sass/_customstyles.scss */
+.wrapper {
+  max-width: 76%;
+  margin: 0 auto;
+}
+
+/* line 12, ../sass/_customstyles.scss */
+.loc-banner {
+  width: 100%;
+  min-height: 510px;
+  max-height: 510px;
+  background: #000 url(../images/banner.png) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/* line 19, ../sass/_customstyles.scss */
+.loc-banner .wrapper {
+  padding-top: 20px;
+}
+
+/* line 22, ../sass/_customstyles.scss */
+.text-yellow {
+  color: #d6f200;
+}
+
+/* line 26, ../sass/_customstyles.scss */
+h2 {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 39px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 31, ../sass/_customstyles.scss */
+h4 {
+  color: #d3d3d3;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  /* Approximation due to font substitution */
+  font-weight: 300;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* line 36, ../sass/_customstyles.scss */
+.location-grid {
+  -moz-box-shadow: 0px 1px 5px #000;
+  -webkit-box-shadow: 0px 1px 5px #000;
+  box-shadow: 0px 1px 5px #000;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+/* line 42, ../sass/_customstyles.scss */
+.location-grid li {
+  border-right: 1px solid #3c3c3c;
+  border-bottom: 1px solid #3c3c3c;
+  min-width: 300px;
+  text-align: center;
+  list-style-type: none;
+  background-color: #2D2D2D;
+}
+/* line 49, ../sass/_customstyles.scss */
+.location-grid li a {
+  min-height: 200px;
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+/* line 54, ../sass/_customstyles.scss */
+.location-grid li a img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 60, ../sass/_customstyles.scss */
+.location-grid li a p {
+  color: #565656;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: center;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  bottom: 19px;
+  transform: translateX(-50%);
+}
+/* line 69, ../sass/_customstyles.scss */
+.location-grid li:hover, .location-grid li .active {
+  background-color: #d6f200;
+  transition: .4s all ease-in-out;
+}
+
+/* line 76, ../sass/_customstyles.scss */
+.location-grid li > a:hover p {
+  transition: .3s color ease-in-out .1s;
+  color: #000;
+}
+
+/* line 82, ../sass/_customstyles.scss */
+.location-grid li:nth-child(3) {
+  border-right: none;
+}
+/* line 85, ../sass/_customstyles.scss */
+.location-grid li:nth-child(4) {
+  border-bottom: none;
+}
+/* line 86, ../sass/_customstyles.scss */
+.location-grid li:nth-child(5) {
+  border-bottom: none;
+}
+/* line 87, ../sass/_customstyles.scss */
+.location-grid li:nth-child(6) {
+  border-bottom: none;
+  border-right: none;
+}
+
+/* line 94, ../sass/_customstyles.scss */
+#brandimg1 {
+  width: 107px;
+}
+
+/* line 95, ../sass/_customstyles.scss */
+#brandimg2 {
+  width: 141px;
+}
+
+/* line 96, ../sass/_customstyles.scss */
+#brandimg3 {
+  width: 125px;
+}
+
+/* line 97, ../sass/_customstyles.scss */
+#brandimg4 {
+  width: 167px;
+}
+
+/* line 98, ../sass/_customstyles.scss */
+#brandimg5 {
+  width: 141px;
+}
+
+/* line 99, ../sass/_customstyles.scss */
+#brandimg6 {
+  width: 141px;
+}
+
+/* line 101, ../sass/_customstyles.scss */
+.work-banner {
+  -moz-box-shadow: 0px 1px 5px #000;
+  -webkit-box-shadow: 0px 1px 5px #000;
+  box-shadow: 0px 1px 5px #000;
+  background: url(../images/grey.png);
+}
+/* line 104, ../sass/_customstyles.scss */
+.work-banner .wrapper {
+  padding: 41px 0 29px;
+}
+/* line 106, ../sass/_customstyles.scss */
+.work-banner .wrapper h2 {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 43px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+}
+/* line 107, ../sass/_customstyles.scss */
+.work-banner .wrapper h4 {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+}
+
+/* line 111, ../sass/_customstyles.scss */
+.work-images-holder {
+  -moz-box-shadow: 0px 1px 5px #000;
+  -webkit-box-shadow: 0px 1px 5px #000;
+  box-shadow: 0px 1px 5px #000;
+  position: relative;
+  display: block;
+  min-height: 400px;
+}
+
+/* line 119, ../sass/_customstyles.scss */
+.work-images-holder p span {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  line-height: 35px;
+}
+/* line 124, ../sass/_customstyles.scss */
+.work-images-holder p .text-yellow {
+  color: #d6f200;
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+}
+
+/* line 129, ../sass/_customstyles.scss */
+.case-image, .charger-image {
+  position: relative;
+}
+
+/* line 133, ../sass/_customstyles.scss */
+.case-image {
+  min-height: 400px;
+  background: url(../images/case.png) no-repeat;
+  background-size: 100% 100%;
+  transition: .3s all ease-in-out .2s;
+}
+/* line 138, ../sass/_customstyles.scss */
+.case-image p {
+  position: absolute;
+  top: 19px;
+  right: 54px;
+}
+
+/* line 145, ../sass/_customstyles.scss */
+.charger-image {
+  min-height: 400px;
+  background: url(../images/charging.png) no-repeat;
+  background-size: 100% 100%;
+  transition: .3s all ease-in-out .2s;
+}
+/* line 150, ../sass/_customstyles.scss */
+.charger-image p {
+  position: absolute;
+  bottom: 25px;
+  left: 81px;
+  text-align: left;
+}
+
+/* line 158, ../sass/_customstyles.scss */
+.case {
+  width: 56%;
+  position: absolute;
+}
+/* line 161, ../sass/_customstyles.scss */
+.case:hover .case-image {
+  background: url(../images/case-hover.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 167, ../sass/_customstyles.scss */
+.charger {
+  width: 56%;
+  position: absolute;
+  left: 44%;
+}
+/* line 171, ../sass/_customstyles.scss */
+.charger:hover .charger-image {
+  background: url(../images/charging-hover.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 177, ../sass/_customstyles.scss */
+img[src*='tool'] {
+  width: 268px;
+}
+
+/* line 178, ../sass/_customstyles.scss */
+img[src*='iphone'] {
+  width: 125px;
+}
+
+/* line 179, ../sass/_customstyles.scss */
+img[src*='p&g'] {
+  width: 181px;
+}
+
+/* line 181, ../sass/_customstyles.scss */
+.products {
+  background: url(../images/grey.png);
+  padding: 34px 0 40px;
+}
+/* line 184, ../sass/_customstyles.scss */
+.products .wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* line 192, ../sass/_customstyles.scss */
+.product:first-child {
+  margin-left: 73px;
+}
+/* line 194, ../sass/_customstyles.scss */
+.product:first-child a {
+  margin-bottom: 27px;
+  display: block;
+  text-align: center;
+}
+/* line 200, ../sass/_customstyles.scss */
+.product:last-child {
+  margin-right: 73px;
+}
+/* line 202, ../sass/_customstyles.scss */
+.product:last-child a {
+  margin-bottom: 18px;
+  display: block;
+  text-align: center;
+}
+/* line 208, ../sass/_customstyles.scss */
+.product p {
+  text-transform: uppercase;
+}
+/* line 210, ../sass/_customstyles.scss */
+.product p span {
+  display: block;
+}
+/* line 212, ../sass/_customstyles.scss */
+.product p span:nth-child(1) {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  line-height: 12px;
+}
+/* line 216, ../sass/_customstyles.scss */
+.product p span:nth-child(2) {
+  color: #d6f200;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+}
+/* line 220, ../sass/_customstyles.scss */
+.product p span:last-child {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  line-height: 22px;
+}
+
+/* line 228, ../sass/_customstyles.scss */
+#seperator {
+  min-height: 10px;
+  width: 100%;
+  background: url("../images/seperator.png") no-repeat;
+  background-size: 100%;
+}
+
+/* line 235, ../sass/_customstyles.scss */
+footer {
+  background-color: #000;
+}
+
+/* line 239, ../sass/_customstyles.scss */
+.brand {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #1b1b1b;
+}
+
+/* line 247, ../sass/_customstyles.scss */
+.social {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 251, ../sass/_customstyles.scss */
+.social span {
+  color: #646464;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin-right: 24px;
+}
+
+/* line 257, ../sass/_customstyles.scss */
+.social-links {
+  list-style-type: none;
+}
+/* line 259, ../sass/_customstyles.scss */
+.social-links a {
+  width: 48px;
+  display: inline-block;
+}
+
+/* line 265, ../sass/_customstyles.scss */
+.social-links span {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+}
+
+/* line 271, ../sass/_customstyles.scss */
+.social-links li {
+  display: inline-block;
+  margin-right: 26px;
+}
+/* line 274, ../sass/_customstyles.scss */
+.social-links li:last-child {
+  margin-right: 0px;
+}
+
+/* line 277, ../sass/_customstyles.scss */
+.facebook {
+  background: url(../images/social.png);
+  background-position: 0 0;
+}
+
+/* line 282, ../sass/_customstyles.scss */
+.twitter {
+  background: url(../images/social.png);
+  background-position: 202px 0;
+}
+
+/* line 287, ../sass/_customstyles.scss */
+.youtube {
+  background: url(../images/social.png);
+  background-position: 48px 0;
+}
+
+/* line 292, ../sass/_customstyles.scss */
+.google {
+  background: url(../images/social.png);
+  background-position: 125px 0;
+}
+
+/* line 297, ../sass/_customstyles.scss */
+.copyright {
+  color: #4c4c4c;
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  display: block;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+/* line 304, ../sass/_customstyles.scss */
+.bottom-bar {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-top;
+  align-items: flex-top;
+  padding: 26px 0;
+}
+
+/* line 312, ../sass/_customstyles.scss */
+.footer-menu li {
+  display: inline-block;
+  list-style-type: none;
+}
+/* line 315, ../sass/_customstyles.scss */
+.footer-menu li a {
+  color: #a76d2f;
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .3s all ease-in-out;
+}
+/* line 320, ../sass/_customstyles.scss */
+.footer-menu li a:hover {
+  color: #4c4c4c;
+}
+/* line 324, ../sass/_customstyles.scss */
+.footer-menu li:after {
+  color: #a76d2f;
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  content: "|";
+  margin: 0 10px;
+  display: inline-block;
+}
+/* line 330, ../sass/_customstyles.scss */
+.footer-menu li:last-child:after {
+  display: none;
+}
