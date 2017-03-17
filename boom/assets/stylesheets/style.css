@@ -1,0 +1,657 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of 
+* content. Table of content is use display the overall tree structure of your
+* Layout. 
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and 
+* example to let you know)
+
+1. CSS Reset Code
+  1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+  1.2. Clear Fix
+  1.3. Font class declaration
+2. Body
+3. Header / .header
+  2.1. Navigation / .navbar
+4. Content / .content
+  4.1. Left column / .leftcolumn
+  4.2. Right column / .rightcolumn
+  4.3. Sidebar / .sidebar
+    4.3.1. RSS / .rss
+    4.3.2. Search / .search
+    4.3.3. Boxes / .box
+    4.3.4. Sideblog / .sideblog
+    4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow. 
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following color code and add your own as this is just and 
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following typography and add your own as this is just and 
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+/* ==========================================================================
+ 1. CSS Reset Code
+ ========================================================================== */
+/* 1.1. Eric Meyers Reset
+ http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ ========================================================================== */
+/* line 65, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 81, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+/* line 87, ../sass/_reset.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+/* line 91, ../sass/_reset.scss */
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+/* line 94, ../sass/_reset.scss */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+/* line 101, ../sass/_reset.scss */
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* line 107, ../sass/_reset.scss */
+em {
+  font-style: italic;
+}
+
+/* line 109, ../sass/_reset.scss */
+img {
+  border: 0;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+}
+
+/* line 116, ../sass/_reset.scss */
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+/* line 124, ../sass/_reset.scss */
+sup {
+  top: -.7em;
+}
+
+/* line 126, ../sass/_reset.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+========================================================================== */
+/* line 131, ../sass/_reset.scss */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+/* line 137, ../sass/_reset.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 139, ../sass/_reset.scss */
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start 
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+/* line 2, ../sass/_header.scss */
+header .wrapper {
+  padding: 28px 40px;
+  max-width: 1200px;
+}
+
+/* line 9, ../sass/_header.scss */
+h1 {
+  display: inline-block;
+}
+/* line 11, ../sass/_header.scss */
+h1 a {
+  display: inline-block;
+}
+/* line 13, ../sass/_header.scss */
+h1 a img {
+  width: 173px;
+}
+
+/* line 17, ../sass/_header.scss */
+nav {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+/* line 19, ../sass/_header.scss */
+nav li {
+  margin-right: 70px;
+  display: inline-block;
+  vertical-align: top;
+  list-style-type: none;
+}
+/* line 24, ../sass/_header.scss */
+nav li a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: center;
+  border-top: 4px solid;
+  border-bottom: 4px solid transparent;
+  min-width: 80px;
+  display: block;
+  text-decoration: none;
+  transition: .3s all ease-in-out;
+}
+/* line 32, ../sass/_header.scss */
+nav li a span {
+  display: block;
+}
+/* line 34, ../sass/_header.scss */
+nav li:nth-child(1) {
+  margin-left: 64px;
+}
+/* line 36, ../sass/_header.scss */
+nav li:nth-child(1) a {
+  padding: 7px 0;
+  color: #ff6c2c;
+}
+/* line 41, ../sass/_header.scss */
+nav li:nth-child(2) a {
+  padding: 7px 0;
+  color: #009bdb;
+}
+/* line 45, ../sass/_header.scss */
+nav li:nth-child(3) a {
+  padding: 7px 0;
+  color: #98c11e;
+}
+/* line 49, ../sass/_header.scss */
+nav li:nth-child(4) a {
+  padding: 7px 0;
+  color: #e4447d;
+}
+/* line 53, ../sass/_header.scss */
+nav li:nth-child(5) a {
+  padding: 13px 0;
+  color: #a44e8a;
+}
+/* line 57, ../sass/_header.scss */
+nav li:nth-child(6) a {
+  padding: 13px 0;
+  color: #ff533f;
+}
+/* line 61, ../sass/_header.scss */
+nav li:hover a, nav li .active {
+  border-bottom: 4px solid;
+}
+
+/* line 65, ../sass/_header.scss */
+.social li {
+  margin-bottom: -2px;
+  display: block;
+  list-style-type: none;
+}
+/* line 69, ../sass/_header.scss */
+.social li:last-child {
+  margin-bottom: 0px;
+}
+/* line 70, ../sass/_header.scss */
+.social li a {
+  height: 35px;
+  width: 35px;
+  display: block;
+}
+
+/* line 77, ../sass/_header.scss */
+.linkedin {
+  background: url(../images/social.png);
+  background-position: top center;
+}
+
+/* line 82, ../sass/_header.scss */
+.twitter {
+  background: url(../images/social.png);
+  background-position: center;
+}
+
+/* line 87, ../sass/_header.scss */
+.facebook {
+  background: url(../images/social.png);
+  background-position: bottom center;
+}
+
+/* line 1, ../sass/_customstyles.scss */
+header .wrapper, main .wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* line 6, ../sass/_customstyles.scss */
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  background: url(../images/paper.png) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+/* line 14, ../sass/_customstyles.scss */
+.wrapper {
+  margin: 0 auto;
+}
+
+/* line 16, ../sass/_customstyles.scss */
+.banner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 123px;
+  margin-top: -27px;
+  padding: 145px 0 0;
+  position: relative;
+  background: url(../images/banner.png) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  text-align: center;
+}
+/* line 27, ../sass/_customstyles.scss */
+.banner img {
+  width: 495px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 36, ../sass/_customstyles.scss */
+main {
+  margin-top: 55px;
+}
+/* line 38, ../sass/_customstyles.scss */
+main .wrapper {
+  width: 1130px;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+/* line 45, ../sass/_customstyles.scss */
+.left {
+  margin-right: 17px;
+}
+
+/* line 46, ../sass/_customstyles.scss */
+.center {
+  margin-right: 14px;
+}
+
+/* line 48, ../sass/_customstyles.scss */
+.marketing {
+  display: inline-block;
+  border: 4px solid #ff7620;
+  border-radius: 6px;
+  padding: 14px 8px;
+}
+/* line 53, ../sass/_customstyles.scss */
+.marketing img {
+  width: 224px;
+}
+
+/* line 58, ../sass/_customstyles.scss */
+img[src*='stars'] {
+  width: 259px;
+  position: absolute;
+  left: -79px;
+  top: -73px;
+}
+
+/* line 65, ../sass/_customstyles.scss */
+.campaign {
+  box-sizing: border-box;
+  width: 250px;
+  border: 4px solid #ff7620;
+  border-radius: 6px;
+  margin-top: 18px;
+  position: relative;
+  padding: 58px 29px 67px;
+}
+
+/* line 75, ../sass/_customstyles.scss */
+.campaign h3 {
+  color: #98c11e;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+/* line 79, ../sass/_customstyles.scss */
+.campaign h3 .campaign-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  display: block;
+}
+/* line 83, ../sass/_customstyles.scss */
+.campaign h3 .dots {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 41px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  line-height: 10px;
+}
+
+/* line 90, ../sass/_customstyles.scss */
+.art {
+  margin-top: 81px;
+}
+/* line 92, ../sass/_customstyles.scss */
+.art li {
+  display: block;
+  list-style-type: none;
+}
+/* line 95, ../sass/_customstyles.scss */
+.art li a {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+  text-decoration: none;
+  transition: .3s all ease-in-out;
+}
+/* line 103, ../sass/_customstyles.scss */
+.art li a span {
+  display: block;
+}
+/* line 105, ../sass/_customstyles.scss */
+.art li:nth-child(1) {
+  margin-bottom: 31px;
+}
+/* line 107, ../sass/_customstyles.scss */
+.art li:nth-child(1) a {
+  height: 105px;
+  width: 186px;
+  background: url(../images/arturo.png);
+  background-position: 0px 0px;
+}
+/* line 115, ../sass/_customstyles.scss */
+.art li:nth-child(2) {
+  margin-bottom: 27px;
+}
+/* line 117, ../sass/_customstyles.scss */
+.art li:nth-child(2) a {
+  height: 147px;
+  width: 98px;
+  background: url(../images/arturo.png);
+  background-position: center -136px;
+}
+/* line 125, ../sass/_customstyles.scss */
+.art li:nth-child(3) {
+  margin-bottom: 70px;
+}
+/* line 127, ../sass/_customstyles.scss */
+.art li:nth-child(3) a {
+  height: 117px;
+  width: 128px;
+  background: url(../images/arturo.png);
+  background-position: -28px 248px;
+}
+/* line 135, ../sass/_customstyles.scss */
+.art li:nth-child(4) {
+  margin-bottom: 0px;
+}
+/* line 137, ../sass/_customstyles.scss */
+.art li:nth-child(4) a {
+  height: 61px;
+  width: 186px;
+  background: url(../images/arturo.png);
+  background-position: center 61px;
+}
+/* line 144, ../sass/_customstyles.scss */
+.art li:hover a {
+  -webkit-filter: opacity(0.7);
+  filter: opacity(0.7);
+}
+
+/* line 151, ../sass/_customstyles.scss */
+.center, .clubs {
+  box-sizing: border-box;
+  border: 4px solid #ff7620;
+  border-radius: 6px;
+  position: relative;
+}
+
+/* line 158, ../sass/_customstyles.scss */
+.center {
+  width: 547px;
+  padding: 26px 13px 0px 21px;
+}
+
+/* line 163, ../sass/_customstyles.scss */
+.scroll-area {
+  max-height: 856px;
+  overflow-Y: scroll;
+  margin-top: 28px;
+}
+
+/* line 171, ../sass/_customstyles.scss */
+.scroll-area::-webkit-scrollbar {
+  width: 22px;
+}
+/* line 175, ../sass/_customstyles.scss */
+.scroll-area::-webkit-scrollbar-track {
+  background-color: #DFD7CC;
+}
+/* line 179, ../sass/_customstyles.scss */
+.scroll-area::-webkit-scrollbar-thumb {
+  height: 7.6%;
+  border-radius: 10px;
+  border: 5.5px solid #DFD7CC;
+  background-color: #ff6c2c;
+}
+
+/* line 187, ../sass/_customstyles.scss */
+.scroll-container {
+  margin-right: 10px;
+}
+/* line 189, ../sass/_customstyles.scss */
+.scroll-container p {
+  max-width: 400px;
+  margin-top: 16px;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 12px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 1px;
+}
+/* line 195, ../sass/_customstyles.scss */
+.scroll-container p + img {
+  margin-top: 28px;
+}
+/* line 199, ../sass/_customstyles.scss */
+.scroll-container .harry-hill {
+  text-align: center;
+}
+/* line 201, ../sass/_customstyles.scss */
+.scroll-container .harry-hill img {
+  width: 474px;
+}
+
+/* line 205, ../sass/_customstyles.scss */
+.clubs {
+  width: 547px;
+  margin-top: 14px;
+  padding: 22px 22px 24px 28px;
+}
+
+/* line 211, ../sass/_customstyles.scss */
+.arrived, .twitter-image, .trained, .pinterest {
+  width: 308px;
+  box-sizing: border-box;
+  border: 4px solid #ff7620;
+  border-radius: 6px;
+  margin-bottom: 17px;
+}
+
+
+
+/* line 219, ../sass/_customstyles.scss */
+.arrived {
+  padding: 28px 44px 28px 33px;
+}
+
+/* line 223, ../sass/_customstyles.scss */
+.trained {
+  padding: 22px 22px;
+}
+
+/* line 227, ../sass/_customstyles.scss */
+.pinterest {
+  padding: 15px 21px 16px 19px;
+  margin-bottom: 0px;
+}
+/* line 229, ../sass/_customstyles.scss */
+.pinterest p {
+  width: 268px;
+  height: 82px;
+  background: url(../images/frame.png) no-repeat;
+  color: #009bdb;
+  text-transform: uppercase;
+}
+/* line 235, ../sass/_customstyles.scss */
+.pinterest p span:first-child {
+  padding-top: 20px;
+  display: block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 20px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+}
+/* line 240, ../sass/_customstyles.scss */
+.pinterest p span:last-child {
+  display: block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 17px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: center;
+  line-height: 16px;
+}
+/* line 246, ../sass/_customstyles.scss */
+.pinterest img {
+  width: 256px;
+  margin-top: 5px;
+}
+
+footer {  
+  margin-top: 15px;
+  background-color: #ff6c28;
+}
+
+.brand-links li {
+  display: block;
+  list-style-type: none;
+}
+
+.brand-links li a {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+  text-decoration: none;
+  transition: .3s all ease-in-out;
+}
+
+.brand-links li a span {
+  display: block; 
+}
+
+.brand-img1 { 
+  height: 27px;
+  width: 65px;
+  background: url(../images/wonderground.png) no-repeat;
+  background-position: 0 -67px;
+}
+
+img[src*='footer-boom'] { width: 39px; }

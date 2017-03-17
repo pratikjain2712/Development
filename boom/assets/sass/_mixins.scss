@@ -1,0 +1,38 @@
+@mixin font-theme($size,$weight,$align,$family:null) {
+    font-family: $family;
+    font-size: $size;/* Approximation due to font substitution */
+    font-weight: $weight;
+    text-align:$align;
+}
+
+@mixin bp($point) {
+  @if $point == lg {
+    @media (max-width: 1250px) { @content; }
+  }
+  @else if $point == md {
+    @media (max-width: 770px) { @content; }
+  }
+  @else if $point == sm {
+    @media (max-width: 600px)  { @content; }
+  }
+}
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}

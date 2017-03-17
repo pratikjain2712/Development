@@ -1,0 +1,250 @@
+%flex-wrap-center {
+  @include display-flex;
+  @include justify-content(space-between);
+}
+
+.container{
+  margin: 0 auto;
+  max-width:1280px;
+  background:url(../images/paper.png) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.wrapper { margin: 0 auto; }
+
+.banner{
+  box-sizing:border-box;
+  width:100%;
+  height:123px;
+  margin-top: -27px;
+  padding:145px 0 0;
+  position: relative;
+  background: url(../images/banner.png) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  text-align: center;
+  img{
+    width: 495px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+  }
+}
+
+main{
+  margin-top: 55px;
+  .wrapper{
+    width:1130px;
+    @extend %flex-wrap-center;
+    @include align-items(flex-start);
+  }
+}
+
+.left{ margin-right: 17px; }
+.center{ margin-right: 14px; }
+
+.marketing{
+  display: inline-block;
+  border:$border;
+  border-radius: 6px;
+  padding:14px 8px;
+  img{
+    width: 224px;
+  }
+}
+
+img[src*='stars']{
+  width: 259px;
+  position: absolute;
+  left:-79px;
+  top:-73px;
+}
+
+.campaign {
+  box-sizing:border-box;
+  width: 250px;
+  border:$border;
+  border-radius: 6px;
+  margin-top: 18px;
+  position: relative;
+  padding:58px 29px 67px;
+}
+
+.campaign h3 {
+  color:#98c11e;
+  text-transform: uppercase;
+  letter-spacing:3px;
+  .campaign-text {
+    @include font-theme(24px,400,left,$font-family);
+    display: block;
+  }
+  .dots{
+    display: block;
+    @include font-theme(41px,400,center,$font-family);
+    line-height: 10px;
+  }
+}
+
+.art{
+  margin-top: 81px;
+  li{
+    display: block;
+    list-style-type: none;
+    a{
+      margin:0 auto;
+      display:block;
+      position: relative;
+      -webkit-filter: opacity(1);
+      filter: opacity(1);
+      text-decoration: none;
+      transition:.3s all ease-in-out;
+      span{ display:block; }
+    }
+    &:nth-child(1){
+      margin-bottom: 31px;
+      a{
+        height: 105px;
+        width: 186px;
+        background:url(../images/arturo.png);
+        background-position:0px 0px;
+      }
+    }
+
+    &:nth-child(2){
+      margin-bottom: 27px;
+      a{
+        height: 147px;
+        width: 98px;
+        background:url(../images/arturo.png);
+        background-position:center -136px;
+      }
+    }
+
+    &:nth-child(3){
+      margin-bottom: 70px;
+      a{
+        height: 117px;
+        width: 128px;
+        background:url(../images/arturo.png);
+        background-position:-28px 248px;
+      }
+    }
+
+    &:nth-child(4){
+      margin-bottom: 0px;
+      a{
+        height: 61px;
+        width: 186px;
+        background:url(../images/arturo.png);
+        background-position:center 61px;
+      }
+    }
+    &:hover a{
+      -webkit-filter: opacity(0.7);
+      filter: opacity(0.7);
+    }
+  }
+}
+
+.center,.clubs{
+  box-sizing:border-box;
+  border:$border;
+  border-radius: 6px;
+  position: relative;
+}
+
+.center{
+  width: 547px;
+  padding:26px 13px 0px 21px;
+}
+
+.scroll-area{
+  max-height: 856px;
+  overflow-Y:scroll;
+  margin-top: 28px;
+}
+
+
+.scroll-area{
+  &::-webkit-scrollbar {
+    width: 22px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color:#DFD7CC;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  height: 7.6%;
+  border-radius:10px;
+  border: 5.5px solid #DFD7CC;
+  background-color:  #ff6c2c;
+  }
+}
+
+.scroll-container{
+  margin-right:10px;
+  p{
+    max-width: 400px;
+    margin-top: 16px;
+    color:#000;
+    @include font-theme(12px,700,left,sans-serif);
+    letter-spacing:1px;
+    &+img{
+      margin-top:28px ;
+    }
+  }
+  .harry-hill{
+    text-align: center;
+    img{ width:474px; }
+  }
+}
+
+.clubs {
+  width: 547px;
+  margin-top: 14px;
+  padding:20px 22px 23px 27px;
+}
+
+.arrived,.twitter-image,.trained,.pinterest{
+  width: 308px;
+  box-sizing: border-box;
+  border: 4px solid #ff7620;
+  border-radius: 6px;
+  margin-bottom: 17px;
+}
+
+.arrived{
+  padding:28px 44px 28px 33px;
+}
+
+.trained{
+  padding: 22px 22px;
+}
+
+.pinterest {
+  padding: 15px 21px 20px 19px;
+  p{
+    width:268px;
+    height: 82px;
+    background:url(../images/frame.png) no-repeat;
+    color:#009bdb;
+    text-transform: uppercase;
+    span:first-child{
+      padding-top: 11px;
+      display: block;
+      @include font-theme(20px,400,center,$font-family-marker);
+    }
+    span:last-child{
+      display: block;
+      @include font-theme(17px,400,center,$font-family-marker);
+      line-height: 16px;
+    }
+  }
+  img{
+    // margin-top: 5px;
+    width: 256px;
+  }
+}
