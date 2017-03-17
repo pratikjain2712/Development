@@ -1,0 +1,16 @@
+@mixin font($font-weight, $font-size, $font-family) {
+	-webkit-font: $font-weight $font-size $font-family ;
+	-moz-font: $font-weight $font-size $font-family ;
+	font: $font-weight $font-size $font-family ;
+}
+@mixin bp($point) {
+  @if $point == lg {
+    @media (max-width: 1250px) { @content; }
+  }
+  @else if $point == md {
+    @media (max-width: 770px) { @content; }
+  }
+  @else if $point == sm {
+    @media (max-width: 600px)  { @content; }
+  }
+}

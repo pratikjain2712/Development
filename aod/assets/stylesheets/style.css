@@ -1,0 +1,833 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of 
+* content. Table of content is use display the overall tree structure of your
+* Layout. 
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and 
+* example to let you know)
+
+1. CSS Reset Code
+1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+1.2. Clear Fix
+1.3. Font class declaration
+2. Body
+3. Header / .header
+2.1. Navigation / .navbar
+4. Content / .content
+4.1. Left column / .leftcolumn
+4.2. Right column / .rightcolumn
+4.3. Sidebar / .sidebar
+4.3.1. RSS / .rss
+4.3.2. Search / .search
+4.3.3. Boxes / .box
+4.3.4. Sideblog / .sideblog
+4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow. 
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following color code and add your own as this is just and 
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following typography and add your own as this is just and 
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+/* ==========================================================================
+1. CSS Reset Code
+========================================================================== */
+/* 1.1. Eric Meyers Reset
+http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+========================================================================== */
+/* line 65, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 81, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+/* line 87, ../sass/_reset.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+/* line 91, ../sass/_reset.scss */
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+/* line 94, ../sass/_reset.scss */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+/* line 101, ../sass/_reset.scss */
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* line 107, ../sass/_reset.scss */
+em {
+  font-style: italic;
+}
+
+/* line 109, ../sass/_reset.scss */
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+/* line 114, ../sass/_reset.scss */
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+/* line 122, ../sass/_reset.scss */
+sup {
+  top: -.7em;
+}
+
+/* line 124, ../sass/_reset.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+========================================================================== */
+/* line 129, ../sass/_reset.scss */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+/* line 135, ../sass/_reset.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 137, ../sass/_reset.scss */
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start 
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+/* line 153, ../sass/_reset.scss */
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* line 1, ../sass/header/_header.scss */
+header {
+  position: relative;
+}
+/* line 3, ../sass/header/_header.scss */
+header .header-top {
+  width: 100%;
+  padding-top: 25px;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+/* line 11, ../sass/header/_header.scss */
+header nav {
+  display: inline-block;
+}
+/* line 13, ../sass/header/_header.scss */
+header nav li {
+  margin: 0px 14px;
+  display: inline-block;
+  list-style: none;
+}
+/* line 17, ../sass/header/_header.scss */
+header nav li a {
+  font-family: 'Lato';
+  color: #4d4959;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 23, ../sass/header/_header.scss */
+header nav li a:hover {
+  color: rgba(77, 73, 89, 0.52);
+}
+/* line 29, ../sass/header/_header.scss */
+header h1 {
+  margin: 0px 50px;
+  display: inline-block;
+}
+/* line 34, ../sass/header/_header.scss */
+header .banner {
+  position: relative;
+  top: 0px;
+}
+/* line 37, ../sass/header/_header.scss */
+header .banner img {
+  width: 100%;
+}
+
+/* line 1, ../sass/main/_main.scss */
+.wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* line 6, ../sass/main/_main.scss */
+.main-box-content {
+  padding: 8.5% 0% 9.5%;
+  text-align: center;
+}
+
+/* line 11, ../sass/main/_main.scss */
+.main-box-content-text {
+  -webkit-font: 400 18px "Lato";
+  -moz-font: 400 18px "Lato";
+  font: 400 18px "Lato";
+  color: #848789;
+  line-height: 34px;
+  text-indent: 35px;
+  white-space: pre;
+}
+@media (max-width: 1250px) {
+  /* line 11, ../sass/main/_main.scss */
+  .main-box-content-text {
+    white-space: normal;
+  }
+}
+@media (max-width: 770px) {
+  /* line 11, ../sass/main/_main.scss */
+  .main-box-content-text {
+    white-space: normal;
+  }
+}
+
+/* line 25, ../sass/main/_main.scss */
+.box-content {
+  text-align: center;
+}
+
+/* line 26, ../sass/main/_main.scss */
+.box1 {
+  padding: 60px 45px 38px;
+}
+
+/* line 27, ../sass/main/_main.scss */
+.box2 {
+  padding: 48px 45px 48px;
+}
+
+/* line 28, ../sass/main/_main.scss */
+.box3 {
+  padding: 37px 53px 37px;
+}
+
+/* line 29, ../sass/main/_main.scss */
+.form {
+  padding: 7% 53px;
+}
+
+/* line 30, ../sass/main/_main.scss */
+.box {
+  background-color: #f7f7f7;
+}
+
+/* line 32, ../sass/main/_main.scss */
+.main-box-icon {
+  margin-bottom: 28px;
+}
+
+/* line 34, ../sass/main/_main.scss */
+.box-icon {
+  margin-bottom: 20px;
+}
+
+/* line 36, ../sass/main/_main.scss */
+.main-content-heading {
+  -webkit-font: 600 18px "Lato";
+  -moz-font: 600 18px "Lato";
+  font: 600 18px "Lato";
+  margin-bottom: 19px;
+  color: #353638;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* line 44, ../sass/main/_main.scss */
+.content-heading {
+  -webkit-font: 600 18px "Lato";
+  -moz-font: 600 18px "Lato";
+  font: 600 18px "Lato";
+  color: #353638;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* line 51, ../sass/main/_main.scss */
+.content-text {
+  margin-top: 10px;
+  -webkit-font: 400 15px "Lato";
+  -moz-font: 400 15px "Lato";
+  font: 400 15px "Lato";
+  color: #848789;
+  line-height: 30px;
+  text-align: left;
+}
+
+/* line 59, ../sass/main/_main.scss */
+img[src*='line'] {
+  margin-top: 30px;
+}
+
+/* line 63, ../sass/main/_main.scss */
+.main-box {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+@media (max-width: 770px) {
+  /* line 63, ../sass/main/_main.scss */
+  .main-box {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1250px) {
+  /* line 63, ../sass/main/_main.scss */
+  .main-box {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+/* line 73, ../sass/main/_main.scss */
+.main-box .box-img {
+  -webkit-flex-basis: 67%;
+  flex-basis: 67%;
+  position: relative;
+}
+@media (max-width: 770px) {
+  /* line 73, ../sass/main/_main.scss */
+  .main-box .box-img {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 1250px) {
+  /* line 73, ../sass/main/_main.scss */
+  .main-box .box-img {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 600px) {
+  /* line 73, ../sass/main/_main.scss */
+  .main-box .box-img {
+    order: 1;
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+/* line 83, ../sass/main/_main.scss */
+.main-box .box-img img {
+  width: 100%;
+}
+/* line 88, ../sass/main/_main.scss */
+.main-box .box-img3 {
+  -webkit-flex-basis: 33%;
+  flex-basis: 33%;
+  position: relative;
+}
+/* line 91, ../sass/main/_main.scss */
+.main-box .box-img3 img {
+  width: 100%;
+}
+@media (max-width: 770px) {
+  /* line 88, ../sass/main/_main.scss */
+  .main-box .box-img3 {
+    order: 1;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
+@media (max-width: 1250px) {
+  /* line 88, ../sass/main/_main.scss */
+  .main-box .box-img3 {
+    order: 1;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
+/* line 104, ../sass/main/_main.scss */
+.main-box .img-box-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 109, ../sass/main/_main.scss */
+.main-box .img-box-content .over-img {
+  width: auto;
+}
+
+/* line 113, ../sass/main/_main.scss */
+.full-container-box {
+  width: 100%;
+  display: block;
+}
+/* line 116, ../sass/main/_main.scss */
+.full-container-box .img {
+  width: 100%;
+}
+
+/* line 119, ../sass/main/_main.scss */
+.content-container,
+.content-container3 {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-basis: 33%;
+  flex-basis: 33%;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-content: center;
+  align-content: center;
+}
+@media (max-width: 770px) {
+  /* line 119, ../sass/main/_main.scss */
+  .content-container,
+  .content-container3 {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
+@media (max-width: 1250px) {
+  /* line 119, ../sass/main/_main.scss */
+  .content-container,
+  .content-container3 {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  /* line 119, ../sass/main/_main.scss */
+  .content-container,
+  .content-container3 {
+    order: 2;
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
+
+/* line 144, ../sass/main/_main.scss */
+.content-container3 {
+  -webkit-flex-basis: 34%;
+  flex-basis: 34%;
+}
+
+/* line 149, ../sass/main/_main.scss */
+.slider {
+  padding: 8.5% 0px 4.25%;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+/* line 154, ../sass/main/_main.scss */
+.slider .slide-title h3 {
+  -webkit-font: 700 18px "Lato";
+  -moz-font: 700 18px "Lato";
+  font: 700 18px "Lato";
+  margin-bottom: 25px;
+  color: #353638;
+}
+/* line 158, ../sass/main/_main.scss */
+.slider .slide-title h3 span {
+  -webkit-font: 300 18px "Lato";
+  -moz-font: 300 18px "Lato";
+  font: 300 18px "Lato";
+  color: #848789;
+}
+/* line 165, ../sass/main/_main.scss */
+.slider .content {
+  -webkit-font: 300 24px "Lato";
+  -moz-font: 300 24px "Lato";
+  font: 300 24px "Lato";
+  width: 80%;
+  display: inline-block;
+  color: #848789;
+  font-style: italic;
+  line-height: 34px;
+}
+/* line 174, ../sass/main/_main.scss */
+.slider .slide-btn {
+  margin-top: 7%;
+}
+/* line 176, ../sass/main/_main.scss */
+.slider .slide-btn li {
+  margin: 0 4px;
+  display: inline-block;
+}
+/* line 180, ../sass/main/_main.scss */
+.slider .slide-btn a {
+  border: 1px solid #848789;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+/* line 187, ../sass/main/_main.scss */
+.slider .slide-btn .active {
+  background: #848789;
+}
+
+/* line 191, ../sass/main/_main.scss */
+.box-3 {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+@media (max-width: 1250px) {
+  /* line 191, ../sass/main/_main.scss */
+  .box-3 {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 770px) {
+  /* line 191, ../sass/main/_main.scss */
+  .box-3 {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 600px) {
+  /* line 191, ../sass/main/_main.scss */
+  .box-3 {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+
+/* line 198, ../sass/main/_main.scss */
+.box-3 > img {
+  -webkit-flex-basis: 50%;
+  flex-basis: 50%;
+}
+@media (max-width: 600px) {
+  /* line 198, ../sass/main/_main.scss */
+  .box-3 > img {
+    display: none;
+  }
+}
+
+/* line 203, ../sass/main/_main.scss */
+.box-3:first-child {
+  -webkit-flex-basis: 33%;
+  flex-basis: 33%;
+}
+@media (max-width: 770px) {
+  /* line 203, ../sass/main/_main.scss */
+  .box-3:first-child {
+    order: 1;
+  }
+}
+
+/* line 208, ../sass/main/_main.scss */
+.box-3:nth-child(2) {
+  -webkit-flex-basis: 34%;
+  flex-basis: 34%;
+}
+@media (max-width: 770px) {
+  /* line 208, ../sass/main/_main.scss */
+  .box-3:nth-child(2) {
+    order: 3;
+  }
+}
+@media (max-width: 1250px) {
+  /* line 211, ../sass/main/_main.scss */
+  .box-3:nth-child(2) .box-2 {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 770px) {
+  /* line 211, ../sass/main/_main.scss */
+  .box-3:nth-child(2) .box-2 {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+
+/* line 217, ../sass/main/_main.scss */
+.box-3:last-child {
+  -webkit-flex-basis: 33%;
+  flex-basis: 33%;
+}
+@media (max-width: 770px) {
+  /* line 217, ../sass/main/_main.scss */
+  .box-3:last-child {
+    order: 2;
+  }
+}
+
+/* line 222, ../sass/main/_main.scss */
+.box-2 {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+@media (max-width: 1250px) {
+  /* line 222, ../sass/main/_main.scss */
+  .box-2 {
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 770px) {
+  /* line 222, ../sass/main/_main.scss */
+  .box-2 {
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 600px) {
+  /* line 222, ../sass/main/_main.scss */
+  .box-2 {
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+}
+/* line 228, ../sass/main/_main.scss */
+.box-2 img {
+  -webkit-flex-basis: 50%;
+  flex-basis: 50%;
+}
+
+/* line 233, ../sass/main/_main.scss */
+.shop {
+  padding: 70px 0;
+  background-color: #282f35;
+  text-align: center;
+}
+/* line 237, ../sass/main/_main.scss */
+.shop .btn {
+  -webkit-font: 700 14px "Lato";
+  -moz-font: 700 14px "Lato";
+  font: 700 14px "Lato";
+  border: 1px solid #848789;
+  padding: 15px 54px;
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 248, ../sass/main/_main.scss */
+.shop .btn:hover {
+  background: #fff;
+  color: #000;
+  transition: color .2s ease-in-out .1s;
+}
+
+/* line 255, ../sass/main/_main.scss */
+.form-heading {
+  -webkit-font: 300 24px "Lato";
+  -moz-font: 300 24px "Lato";
+  font: 300 24px "Lato";
+  margin-top: 35px;
+  color: #848789;
+  font-style: italic;
+  line-height: 34px;
+}
+
+/* line 264, ../sass/main/_main.scss */
+input[type='email'] {
+  outline-color: #848789;
+}
+
+/* line 268, ../sass/main/_main.scss */
+form {
+  margin-top: 35px;
+}
+
+/* line 270, ../sass/main/_main.scss */
+.input-box {
+  border-radius: 0px;
+  width: 29.5%;
+  padding: 21px 24px;
+  font-size: 19px;
+  outline: none;
+}
+
+/* line 278, ../sass/main/_main.scss */
+.input-btn {
+  -webkit-font: 300 24px "Lato";
+  -moz-font: 300 24px "Lato";
+  font: 300 24px "Lato";
+  margin-left: 5px;
+  border: 1px solid #64c29e;
+  padding: 18.5px 40px;
+  background: #64c29e;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  transition: all .3s ease-in-out;
+}
+
+/* line 291, ../sass/main/_main.scss */
+.input-btn:hover {
+  transition: color .2s ease-in-out .05s;
+  border: 1px solid #64c29e;
+  background: transparent;
+  color: #64c29e;
+}
+
+/* line 1, ../sass/footer/_footer.scss */
+footer {
+  background-color: #f7f7f7;
+  padding: 100px 105px;
+}
+/* line 2, ../sass/footer/_footer.scss */
+footer .footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 8, ../sass/footer/_footer.scss */
+footer .box-3 {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+/* line 12, ../sass/footer/_footer.scss */
+footer .box-3 li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 7px;
+}
+/* line 16, ../sass/footer/_footer.scss */
+footer .box-3 li a {
+  display: inline-block;
+}
+/* line 18, ../sass/footer/_footer.scss */
+footer .box-3 li a:hover {
+  opacity: 0.6;
+}
+/* line 24, ../sass/footer/_footer.scss */
+footer .first-content {
+  text-align: left;
+}
+/* line 27, ../sass/footer/_footer.scss */
+footer .developed p {
+  -webkit-font: 300 15px "Lato";
+  -moz-font: 300 15px "Lato";
+  font: 300 15px "Lato";
+  display: inline-block;
+  color: #848789;
+  font-style: italic;
+  margin-right: 5px;
+}
+/* line 35, ../sass/footer/_footer.scss */
+footer .developed h2 {
+  display: inline-block;
+}
+/* line 40, ../sass/footer/_footer.scss */
+footer .address {
+  padding-left: 75px;
+  -webkit-font: 300 15px "Lato";
+  -moz-font: 300 15px "Lato";
+  font: 300 15px "Lato";
+  color: #848789;
+}
+/* line 44, ../sass/footer/_footer.scss */
+footer .address p {
+  font-style: italic;
+}
+/* line 47, ../sass/footer/_footer.scss */
+footer .address h4 {
+  -webkit-font: 700 15px "Lato";
+  -moz-font: 700 15px "Lato";
+  font: 700 15px "Lato";
+}

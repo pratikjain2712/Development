@@ -1,0 +1,51 @@
+footer {
+	.footer{
+		@include display-flex;
+		@include align-items(center);
+	}
+	background-color:  #f7f7f7;
+	padding: 100px 105px;
+	.box-3 {
+		width: 33.33%;
+		float: left;
+		text-align: center;
+		li{
+			list-style: none;
+			display: inline-block;
+			margin: 0 7px;
+			a{
+				display: inline-block;
+				&:hover { opacity: 0.6; }
+			}
+		}
+
+	}
+
+	.first-content { text-align: left; }
+
+	.developed {
+		p {
+			@include font(300, 15px, 'Lato');
+			display: inline-block;
+			color:  $content-color;
+			font-style: italic;
+			margin-right: 5px;
+		}
+
+		h2 {
+			display: inline-block;
+		}
+	}
+
+	.address {
+		padding-left: 75px;
+		@include font(300, 15px, 'Lato');
+		color:  $content-color;
+		p{
+			font-style: italic;
+		}
+		h4 {
+			@include font(700, 15px, 'Lato');
+		}
+	}
+}

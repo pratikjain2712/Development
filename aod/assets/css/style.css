@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of 
+* content. Table of content is use display the overall tree structure of your
+* Layout. 
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and 
+* example to let you know)
+
+1. CSS Reset Code
+1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+1.2. Clear Fix
+1.3. Font class declaration
+2. Body
+3. Header / .header
+2.1. Navigation / .navbar
+4. Content / .content
+4.1. Left column / .leftcolumn
+4.2. Right column / .rightcolumn
+4.3. Sidebar / .sidebar
+4.3.1. RSS / .rss
+4.3.2. Search / .search
+4.3.3. Boxes / .box
+4.3.4. Sideblog / .sideblog
+4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow. 
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following color code and add your own as this is just and 
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following typography and add your own as this is just and 
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+/* ==========================================================================
+1. CSS Reset Code
+========================================================================== */
+/* 1.1. Eric Meyers Reset
+http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+========================================================================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start 
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+header {
+  position: relative;
+}
+header .header-top {
+  width: 100%;
+  padding-top: 20px;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+header nav {
+  display: inline-block;
+}
+header nav li {
+  margin: 0px 14px;
+  display: inline-block;
+  list-style: none;
+}
+header nav li a {
+  font-family: 'Lato';
+  color: #4d4959;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+header nav li a:hover {
+  color: rgba(77, 73, 89, 0.52);
+}
+header h1 {
+  margin: 0px 20px;
+  display: inline-block;
+}
+header .banner {
+  position: relative;
+  top: 0px;
+}
+header .banner img {
+  width: 100%;
+}
+
+main .box-content {
+  padding: 11.55% 0%;
+  text-align: center;
+}
+main .box {
+  background-color: #f7f7f7;
+}
+main .content-text {
+  width: 85%;
+  display: inline-block;
+}
+main .box-icon {
+  margin-bottom: 16px;
+}
+main .content-heading {
+  margin-bottom: 16px;
+  -webkit-font: 700 18px "Lato";
+  -moz-font: 700 18px "Lato";
+  font: 700 18px "Lato";
+  color: #353638;
+}
+main .content-text {
+  -webkit-font: 400 18px "Lato";
+  -moz-font: 400 18px "Lato";
+  font: 400 18px "Lato";
+  color: #848789;
+  line-height: 24px;
+}
+main .main-box .box-img {
+  width: 67%;
+  float: left;
+  position: relative;
+}
+main .main-box .box-img img {
+  width: 100%;
+}
+main .main-box .img-box-content {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(45% - 30px);
+}
+main .main-box .img-box-content .over-img {
+  width: auto;
+}
+main .main-box .box-3 {
+  width: 33.33%;
+  float: left;
+}
+main .main-box .box-3 .box-img {
+  width: 100%;
+}
+main .main-box .box-3 .content-container {
+  width: 100%;
+}
+main .main-box .box-3 .full-container-box .box-3-img {
+  width: 100%;
+}
+main .main-box .box-3 .img-box-content {
+  top: calc(50% - 12px);
+  left: calc(32% - 30px);
+}
+main .content-container {
+  width: 33%;
+  float: left;
+  vertical-align: top;
+}
+main .content-container .full-container-box {
+  width: 100%;
+  display: block;
+}
+main .content-container .full-container-box .content-text {
+  width: 88%;
+}
+main .content-container .full-container-box .img {
+  width: 100%;
+}
+main .slider {
+  padding: 80px 0px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+main .slider .slide-content {
+  margin-bottom: 80px;
+}
+main .slider .slide-title h3 {
+  margin-bottom: 15px;
+  -webkit-font: 700 18px "Lato";
+  -moz-font: 700 18px "Lato";
+  font: 700 18px "Lato";
+  color: #353638;
+}
+main .slider .slide-title h3 span {
+  -webkit-font: 300 18px "Lato";
+  -moz-font: 300 18px "Lato";
+  font: 300 18px "Lato";
+  color: #848789;
+}
+main .slider .content {
+  width: 75%;
+  display: inline-block;
+  -webkit-font: 300 24px "Lato";
+  -moz-font: 300 24px "Lato";
+  font: 300 24px "Lato";
+  color: #848789;
+  font-style: italic;
+  line-height: 34px;
+}
+main .slider .slide-btn li {
+  display: inline-block;
+}
+main .slider .slide-btn a {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border: 1px solid #848789;
+  border-radius: 50%;
+}
+main .slider .slide-btn .active {
+  background: #848789;
+}
+main .box-2 {
+  width: 50%;
+  float: left;
+}
+main .box-2 img {
+  width: 100%;
+}
+main .shop {
+  text-align: center;
+  background-color: #282f35;
+}
+main .shop .btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 60px 0px;
+  -webkit-font: 700 14px "Lato";
+  -moz-font: 700 14px "Lato";
+  font: 700 14px "Lato";
+  font-family: Lato;
+  color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+main .shop .btn:hover {
+  background: #fff;
+  color: #848789;
+}
+main .heading {
+  margin-bottom: 13px;
+  -webkit-font: 300 24px "Lato";
+  -moz-font: 300 24px "Lato";
+  font: 300 24px "Lato";
+  color: #848789;
+  font-style: italic;
+  line-height: 34px;
+}
+main .input-box {
+  width: 22%;
+  border-radius: 0px;
+  padding: 12px 11px;
+  outline: none;
+}
+main .input-btn {
+  border: 1px solid #64c29e;
+  padding: 1px 18px 11px 18px;
+  background: #64c29e;
+  -webkit-font: 300 24px "Lato";
+  -moz-font: 300 24px "Lato";
+  font: 300 24px "Lato";
+  color: #fff;
+  outline: none;
+}
+main .input-btn:hover {
+  border: 1px solid #64c29e;
+  background: #fff;
+  color: #848789;
+}
+main .box-divider .box-3:first-child {
+  width: 33%;
+}
+main .box-divider .box-3:last-child {
+  width: 33%;
+}
+main .box-divider .box-3:nth-child(2) {
+  width: 34%;
+}
+main .box-divider .box-content {
+  padding: 11.1% 0%;
+}
+
+footer {
+  background-color: #f7f7f7;
+  padding: 50px 0px;
+}
+footer .box-3 {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+footer .box-3 li {
+  list-style: none;
+  display: inline-block;
+}
+footer .box-3 li:hover {
+  opacity: 0.6;
+}
+footer .first-content {
+  text-align: left;
+}
+footer .developed p {
+  display: inline-block;
+}
+footer .developed h2 {
+  display: inline-block;
+}
+footer .address {
+  padding-left: 75px;
+  -webkit-font: 300 15px "Lato";
+  -moz-font: 300 15px "Lato";
+  font: 300 15px "Lato";
+  color: #848789;
+}
+footer .address h4 {
+  -webkit-font: 700 15px "Lato";
+  -moz-font: 700 15px "Lato";
+  font: 700 15px "Lato";
+}
+
+/*# sourceMappingURL=style.css.map */

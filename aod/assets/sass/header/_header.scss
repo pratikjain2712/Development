@@ -1,0 +1,39 @@
+header{
+	position: relative;
+	.header-top{
+		width: 100%;
+		padding-top: 25px;
+		position: absolute;
+		z-index: 1;
+		text-align: center;
+	}
+
+	nav {
+		display: inline-block;
+		li {
+			margin: 0px 14px;
+			display: inline-block;
+			list-style: none;
+			a{
+				font-family: 'Lato';
+				color: $nav-color;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+			a:hover {
+				color: rgba(77, 73, 89, 0.52);
+			}
+		}
+	}
+
+	h1{
+		margin: 0px 50px;
+		display: inline-block;
+	}
+
+	.banner{
+		position: relative;
+		top: 0px;
+		img { width: 100%; }
+	}
+}

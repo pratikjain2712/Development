@@ -1,0 +1,386 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of 
+* content. Table of content is use display the overall tree structure of your
+* Layout. 
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and 
+* example to let you know)
+
+1. CSS Reset Code
+  1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+  1.2. Clear Fix
+  1.3. Font class declaration
+2. Body
+3. Header / .header
+  2.1. Navigation / .navbar
+4. Content / .content
+  4.1. Left column / .leftcolumn
+  4.2. Right column / .rightcolumn
+  4.3. Sidebar / .sidebar
+    4.3.1. RSS / .rss
+    4.3.2. Search / .search
+    4.3.3. Boxes / .box
+    4.3.4. Sideblog / .sideblog
+    4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow. 
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following color code and add your own as this is just and 
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following typography and add your own as this is just and 
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+
+/* ==========================================================================
+ 1. CSS Reset Code
+ ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+ http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ ========================================================================== */
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+ blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+ dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+ tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+ figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+
+.cf { *zoom: 1; }
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start 
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+
+body {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+}
+header {
+  width: 100%;
+  height: 87px;
+  max-width: 1280px;
+  padding: 28px;
+  box-sizing:border-box;
+  background-color:  rgba(85, 173, 183, 0.84);
+  position: fixed;
+  z-index: 9999;
+}
+
+.logo_wrapper { display: inline; }
+.logo {
+  margin-left: 183px;
+  color: rgb(255, 255, 255);
+  font-family: 'Cherry Swash', cursive;
+  font-size: 40px;/* Approximation due to font substitution */
+  font-weight: 400;
+  line-height: 25px;/* Approximation due to font substitution */
+  text-align: left;
+  text-decoration: none;
+ }
+
+.menu {
+  display: inline-block;
+  float: right;
+  margin-right: 60px;
+  margin-top: -25px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-family: Helvetica;
+  color:  #dce3e4;
+  font-size: 18px;/* Approximation due to font substitution */
+  line-height: 25px;/* Approximation due to font substitution */
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.menu li a:hover { color:  #fff; }
+
+.menu li:after {
+  content: '/';
+  margin:0 20px;
+  font-family: Helvetica;
+  color:  #fff;
+  font-size: 18px;/* Approximation due to font substitution */
+  line-height: 25px;/* Approximation due to font substitution */
+}
+
+.menu li:last-child:after {
+ margin:0 ;
+ content: ' ';
+}
+
+.slider_wrapper {
+  position: relative;
+  top: 0;
+  max-height: 851px;
+}
+
+.image-caption {
+  display: block;
+  width: 517px;
+  max-width: 1280px;
+  top: 217px;
+  left: 50%;
+  margin-left: -258.5px;
+  padding: 0;
+  position: absolute;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  color: #e4e4e4;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 58px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.btn-read{
+  width: 233px;
+  height: 46px;
+  top: 355px;
+  left: 50%;
+  margin-left: -116.5px;
+  position: absolute;
+  border-radius: 3px;
+  border: 3px solid #afb1b4;
+  background-color: rgba(255, 255, 255, 0.06);
+  font-family: Helvetica sans-serif;
+  color: #e4e4e4;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  box-sizing: border-box;
+  transition: 0.3s all ease-in-out;
+}
+
+.btn-read:hover,.btn-read:focus {
+  color: #fff;
+  background:rgba(255, 255, 255, 0);
+}
+
+.slider-list li{
+  display: inline;
+  margin-left:13px;
+}
+
+.slider-list li:first-child{ margin-left:0px; }
+
+.slider-list {
+  top: 523px;
+  left: 50%;
+  margin-left: -54px;
+  position: absolute;
+  margin-bottom:32px;
+}
+
+.information {
+  padding: 84px 0 83px;
+  background: #fff;
+  color: #4c505d;
+  text-align: center;
+  position: relative;
+  margin-top: -278px;
+}
+
+.wrapper-title {
+  width: 629px;
+  font-family: Helvetica sans-serif;
+  margin: 0px auto;
+  font-size: 30px;
+  line-height: 38.5px;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.wrapper-desc {
+  width: 853px;
+  margin: 39px auto 0;
+  font-family: Helvetica;
+  font-size: 13.9px;/* Approximation due to font substitution */
+  line-height: 18px;/* Approximation due to font substitution */
+  box-sizing: border-box;
+}
+
+.wrapper-icons{
+  width: 425px;
+  margin: 74px auto 0;
+  box-sizing: border-box;
+}
+
+.wrapper-icons img { margin-right: 127px; }
+
+.wrapper-icons img:last-child { margin-right: 0px; }
+
+.abt_wrapper {
+  padding: 96px 200px;
+  text-align: center;
+  background-color:  #00d089;
+}
+
+.abt_wrapper h2 {
+  font-family: HelveticaLTStd;
+  color:  #e4e4e4;
+  font-size: 26px;/* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15PX;
+}
+
+.abt_title {
+  margin-left: 38px;
+  display: inline-block;
+}
+
+.abt_img { margin-top: -40px; }
+
+.abt_desc {
+  width: 901px;
+  margin-top: 60px;
+  font-family: Helvetica;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.contact_wrapper {
+  background: url(../images/map.png) no-repeat;
+  padding: 44px 161px;
+}
+
+.form_wrapper {
+  position: relative;
+  padding: 82px 112px;
+  background: url(../images/form.png) no-repeat;
+}
+
+.form-wrapper textarea {
+  border-style: solid;
+  border-width: 1px;
+  border-color:  #d8d8d8;
+  background-color:  #ffffff;
+  width: 275px;
+  height: 80px;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+  margin-bottom: 15px;
+  text-align: left;
+  display: block;
+  font-family: Helvetica;
+  color:  #4c505d;
+  font-size: 14px;/* Approximation due to font substitution */
+  font-weight: 300;
+  line-height: 22px;/* Approximation due to font substitution */
+  text-align: left;
+}
