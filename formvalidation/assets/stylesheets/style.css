@@ -1,0 +1,575 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of 
+* content. Table of content is use display the overall tree structure of your
+* Layout. 
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and 
+* example to let you know)
+
+1. CSS Reset Code
+  1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+  1.2. Clear Fix
+  1.3. Font class declaration
+2. Body
+3. Header / .header
+  2.1. Navigation / .navbar
+4. Content / .content
+  4.1. Left column / .leftcolumn
+  4.2. Right column / .rightcolumn
+  4.3. Sidebar / .sidebar
+    4.3.1. RSS / .rss
+    4.3.2. Search / .search
+    4.3.3. Boxes / .box
+    4.3.4. Sideblog / .sideblog
+    4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow. 
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following color code and add your own as this is just and 
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code. 
+* Remove the following typography and add your own as this is just and 
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+/* ==========================================================================
+ 1. CSS Reset Code
+ ========================================================================== */
+/* 1.1. Eric Meyers Reset
+ http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ ========================================================================== */
+/* line 65, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 81, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+/* line 87, ../sass/_reset.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+/* line 91, ../sass/_reset.scss */
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+/* line 94, ../sass/_reset.scss */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+/* line 101, ../sass/_reset.scss */
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* line 107, ../sass/_reset.scss */
+em {
+  font-style: italic;
+}
+
+/* line 109, ../sass/_reset.scss */
+img {
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 116, ../sass/_reset.scss */
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+/* line 124, ../sass/_reset.scss */
+sup {
+  top: -.7em;
+}
+
+/* line 126, ../sass/_reset.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+========================================================================== */
+/* line 131, ../sass/_reset.scss */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+/* line 137, ../sass/_reset.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 139, ../sass/_reset.scss */
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start 
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+/* line 1, ../sass/_customstyles.scss */
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* line 6, ../sass/_customstyles.scss */
+.wrapper {
+  width: 100%;
+  max-width: 1090px;
+  margin: 0 auto;
+}
+
+/* line 19, ../sass/_customstyles.scss */
+.topbar {
+  background-color: #c9ced6;
+  padding: 26px 41px 23px 42px;
+}
+
+/* line 24, ../sass/_customstyles.scss */
+.topbar .wrapper, .page-content .wrapper, .marks, .mob-age, footer .wrapper, .footer-logo, .social-links {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* line 30, ../sass/_customstyles.scss */
+.topbar .wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 35, ../sass/_customstyles.scss */
+.logo {
+  width: 155px;
+}
+
+/* line 39, ../sass/_customstyles.scss */
+.page-content .wrapper {
+  padding-top: 40px;
+}
+
+/* line 44, ../sass/_customstyles.scss */
+.col1 {
+  -webkit-flex-basis: 566px;
+  flex-basis: 566px;
+  background: url(../images/copy.jpg) no-repeat;
+}
+/* line 47, ../sass/_customstyles.scss */
+.col1 .col1-content {
+  box-sizing: border-box;
+  padding: 50px 88px 0 21px;
+}
+/* line 51, ../sass/_customstyles.scss */
+.col1 h2 {
+  color: #bf1e2d;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 2.8em;
+  text-transform: uppercase;
+}
+/* line 58, ../sass/_customstyles.scss */
+.col1 h2 + p {
+  color: #232021;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin: 38px 0 40px;
+  font-size: 2.3em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+}
+/* line 65, ../sass/_customstyles.scss */
+.col1 img {
+  max-width: 125%;
+}
+
+/* line 70, ../sass/_customstyles.scss */
+.register-text {
+  color: #be1e2d;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  padding: 7px 9px;
+  max-width: 294px;
+  margin-bottom: 31px;
+  display: inline-block;
+  border-top: 2px dotted;
+  border-bottom: 2px dotted;
+  font-size: 1.31em;
+}
+
+/* line 81, ../sass/_customstyles.scss */
+.image-desc {
+  color: #000;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  max-width: 471px;
+  margin-top: 40px;
+  font-size: 1.063em;
+  line-height: 1.294;
+}
+
+/* line 89, ../sass/_customstyles.scss */
+.col2 {
+  -webkit-flex-basis: 481px;
+  flex-basis: 481px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 92, ../sass/_customstyles.scss */
+.col2 .form-heading {
+  color: #FFF;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  padding: 20px 0 21px 35px;
+  background-color: #979a9e;
+  font-size: 1.5em;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+
+/* line 102, ../sass/_customstyles.scss */
+.form-container {
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 17px 18px;
+  margin-bottom: 41px;
+}
+
+/* line 108, ../sass/_customstyles.scss */
+form {
+  background-color: #e6e9ef;
+  padding: 36px 37px 40px 34px;
+}
+
+/* line 113, ../sass/_customstyles.scss */
+::placeholder {
+  color: #5f5f5f;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  font-size: 0.87em;
+}
+
+/* line 118, ../sass/_customstyles.scss */
+form label {
+  color: #000;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin: 0 0 7px 5px;
+  display: block;
+}
+
+/* line 124, ../sass/_customstyles.scss */
+input[type], select {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #5f5f5f;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 0 14px 16px;
+  background-color: #fff;
+  outline: none;
+  transition: .3s all ease-in;
+}
+/* line 134, ../sass/_customstyles.scss */
+input[type]:focus, select:focus {
+  background-color: #c9ced6;
+  color: #be1621;
+}
+
+/* line 140, ../sass/_customstyles.scss */
+.btn-submit {
+  -moz-box-shadow: 0px 3px 1px #E86A00;
+  -webkit-box-shadow: 0px 3px 1px #E86A00;
+  box-shadow: 0px 3px 1px #E86A00;
+  color: #fff;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  background-color: #ff9000;
+  font-size: 1.438em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  transition: .3s all ease-in-out;
+}
+/* line 153, ../sass/_customstyles.scss */
+.btn-submit:hover, .btn-submit:active {
+  -moz-box-shadow: 0px 2px 1px #E86A00;
+  -webkit-box-shadow: 0px 2px 1px #E86A00;
+  box-shadow: 0px 2px 1px #E86A00;
+}
+
+/* line 158, ../sass/_customstyles.scss */
+.form-row {
+  margin-bottom: 30px;
+}
+
+/* line 162, ../sass/_customstyles.scss */
+.marks p {
+  box-sizing: border-box;
+  -webkit-flex-basis: 117px;
+  flex-basis: 117px;
+}
+
+/* line 169, ../sass/_customstyles.scss */
+.mob, .age {
+  box-sizing: border-box;
+}
+
+/* line 170, ../sass/_customstyles.scss */
+.mob {
+  -webkit-flex-basis: 282px;
+  flex-basis: 282px;
+}
+
+/* line 171, ../sass/_customstyles.scss */
+.age {
+  -webkit-flex-basis: 76px;
+  flex-basis: 76px;
+}
+
+/* line 172, ../sass/_customstyles.scss */
+article > h3 {
+  color: #000;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 26px;
+  font-size: 1.438em;
+  font-weight: 700;
+  line-height: 1.217;
+}
+
+/* line 180, ../sass/_customstyles.scss */
+article > p, .article-list li {
+  color: #000;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 51px;
+  font-size: 1.063em;
+  font-weight: 400;
+  line-height: 1.294;
+}
+
+/* line 188, ../sass/_customstyles.scss */
+.article-list {
+  list-style-type: none;
+}
+/* line 190, ../sass/_customstyles.scss */
+.article-list li {
+  margin-bottom: 18px;
+}
+/* line 192, ../sass/_customstyles.scss */
+.article-list li span {
+  margin-right: 15px;
+}
+/* line 193, ../sass/_customstyles.scss */
+.article-list li p {
+  display: inline;
+}
+
+/* line 197, ../sass/_customstyles.scss */
+.error {
+  color: #ff0000;
+  font-family: "OpenSans", sans-serif;
+  font-size: 1em;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  text-align: left;
+  margin: 10px 0 16px;
+  display: block;
+  font-size: 0.688em;
+}
+
+/* line 204, ../sass/_customstyles.scss */
+footer {
+  padding: 22px 40px 20px;
+  margin-top: 102px;
+  background-color: #c9ced6;
+}
+/* line 208, ../sass/_customstyles.scss */
+footer .wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 214, ../sass/_customstyles.scss */
+.footer-logo {
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 217, ../sass/_customstyles.scss */
+.footer-logo .logo {
+  width: 122px;
+}
+/* line 220, ../sass/_customstyles.scss */
+.footer-logo .times-logo {
+  width: 181px;
+  margin-left: 58px;
+}
+
+/* line 226, ../sass/_customstyles.scss */
+.social-links {
+  list-style-type: none;
+}
+/* line 229, ../sass/_customstyles.scss */
+.social-links a {
+  display: inline-block;
+}
+
+/* line 234, ../sass/_customstyles.scss */
+.social-links span {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+/* line 240, ../sass/_customstyles.scss */
+.social-links li {
+  margin-right: 8px;
+}
+
+/* line 244, ../sass/_customstyles.scss */
+.social-links li:last {
+  margin-right: 0px;
+}
+
+/* line 248, ../sass/_customstyles.scss */
+.facebook {
+  background: url(../images/sprite.png);
+  background-position: 0 0;
+}
+
+/* line 253, ../sass/_customstyles.scss */
+.twitter {
+  background: url(../images/sprite.png);
+  background-position: -38px 0;
+}
+
+/* line 258, ../sass/_customstyles.scss */
+.youtube {
+  background: url(../images/sprite.png);
+  background-position: -77px 0;
+}
+
+/* line 263, ../sass/_customstyles.scss */
+.google {
+  background: url(../images/sprite.png);
+  background-position: -115px 0;
+}
+
+/* line 268, ../sass/_customstyles.scss */
+.linkedin {
+  background: url(../images/sprite.png);
+  background-position: -153px 0;
+}
