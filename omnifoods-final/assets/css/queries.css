@@ -1,0 +1,184 @@
+/* 
+==================Our Viewports==========================
+        480px
+        768px
+        1024px
+        1200px 
+=========================================================        
+*/
+/* font-size : rem */
+
+@media screen and (max-width:767px) {
+    html,body{
+        font-size: 18px;
+    }
+
+
+    .features{
+        flex-wrap: wrap;
+    }
+    
+    .feature-description p{
+        padding: 0rem 2rem;
+        text-align: center;
+        font-size: .9rem; 
+    }
+
+    .features li{
+        margin-right: 0;
+        flex-basis: 45%;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .features >  li h4{
+        text-align: center;
+    }
+    .features >  li p {
+        text-align: justify;
+    }
+    .gallery-items li {
+        width: 33.3333%;
+    }
+    .work-description h3 {
+        font-size: 150%;
+    }
+    .how-it-works{
+        display: block;
+    }
+    .how-it-works figure{
+        text-align: center;
+    }
+    #work-area figure img{
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    .download-buttons{
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:1023px) {
+    .cities{
+        flex-wrap: wrap;
+    }
+    .cities > li {
+        flex-basis: 48%;
+        margin-bottom: 2rem;        
+    }
+    .features{
+        padding: 0rem 1rem;
+        text-align: justify;
+    }
+    .features li{
+        margin-right: 1rem;
+    }
+    header{
+        padding: 1rem;
+    }
+
+    .hero-content {
+        margin-top: 4.9rem;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    html,body{
+        font-size: 16px;
+        overflow-x: hidden;
+    }
+    .flex-parent{
+        justify-content: initial;
+    }
+    nav{
+        transform: translateY(-100%);
+        transition: .7s all cubic-bezier(1,-0.03, 0, 1.55);
+        margin-left: 2rem;
+        opacity: 0;
+    }
+    nav ul{
+        display: block;
+    }
+    nav li{
+        font-size: 1rem;
+        line-height: 1.7rem;
+        margin-bottom: .2rem;
+    }
+    nav li a {
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+    }
+    nav li:not(:last-child){
+        margin-right: 0rem;
+    }
+    .hero-content {
+        margin-top: 5.9rem;
+    }
+    .hero-content h2 {
+        font-size: 200%;
+    }
+    .buttons {
+        margin-top: 2rem;
+    }
+    .feature-description h3, .work-description h3{
+        font-size: 200%;
+    }
+
+    .feature-description p {
+        padding: 0rem 2rem;
+        text-align: justify;
+        font-size: 1rem;
+    }
+    
+    .features li{
+        margin-right: 0;
+        flex-basis: 95%;
+        margin-bottom: 2rem;
+        text-align: left;
+        padding: 0rem 2rem;
+    }
+    .features >  li h4{
+        text-align: left;
+    }
+    
+    .gallery-items li{
+        width: 50%;
+    }
+    
+    .cities > li {
+        flex-basis: 95%;
+        margin-bottom: 2rem;
+    }
+    
+    #work-area{
+        padding: 4.5rem 2rem;
+    }
+    .app-description span {
+        padding: .7rem .9rem;
+        height: 3rem;
+        width: 3rem;
+    }
+    #city-area{
+        padding: 4.5rem 2rem;
+    }
+    .menu-icon{
+        align-self: center;
+        margin-left: auto;
+        font-size: 2rem;
+        margin-right: 1rem;
+        order: 2;
+    }
+
+    #menu:checked ~ nav{
+        opacity: 1;
+        transform: translateY(0%);
+
+    }
+    #menu:checked + label .menu-icons:before{
+        content: "\f00d";
+    }
+    .menu-icons:before{
+        content: "\f0c9";        
+    }
+}
