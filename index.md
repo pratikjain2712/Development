@@ -1,4 +1,4 @@
-## Welcome to my site
+## Welcome to the showcase of some development
 
 ## [Omnifoods](omnifoods-final/index.html)
 ## [Boom](boom/index.html)
