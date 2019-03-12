@@ -1,10 +1,10 @@
 ## Welcome to the showcase of some development
 
 
-## [Some Recent Interview Assignments]
+## Some Recent Interview Assignments
 ## [Avion Labs](https://assignment-aikon-labs.herokuapp.com/)
 
-## [Some Live sites]
+## Some Live sites
 ## [Edit Ink](http://editink.in)
 ## [Snmakeovers](http://snmakeovers.com)
 ## [Zoapi](http://zoapi.com)
