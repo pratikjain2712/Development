@@ -16,7 +16,7 @@
 ## [Precibake](http://87.106.88.237/precibake/)
 
 
-## [Some shitty stuffs]
+## Some shitty stuffs
 ## [Omnifoods](omnifoods-final/index.html)
 ## [Boom](boom/index.html)
 ## [AOD](aod/index.html)
