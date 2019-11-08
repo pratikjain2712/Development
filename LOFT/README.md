@@ -1,4 +1,4 @@
-prdxn-dev-framework
+Pratik-jain-dev-framework
 ===================
 
-PRDXN's "starting package" used for development.
+Pratik's "starting package" used for development.
